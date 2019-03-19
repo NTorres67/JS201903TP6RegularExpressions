@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>JS20190316TP6 - Regular Expressions</title>
+
+</head>
+<body>
+    <!-- Regular Expression:  Series of codes used to describe a series of characters your are searching for.
+        The way your define a series of characters using regular expression is almost exactly universal 
+        no matter what language you are using. The different is the methods used depending on the language used
+        to perform your searches.  -->
+
+    <!-- " / " == deliminiter - begins and ends
+        [string]; {string length(s)}
+        \s == space; \b == boundry  
+        ex: "Emma " space but not a boundry where as "Emma v" the space is a word boundry
+        -->
+
+
+    <script>
+        var regPat = /[0-9]{1,5}\s[A-Z]{2}\b[a-z]{2,}/;
+
+        var regPat = new RegExp("\d{1,5}\s[A-Z]{2}\b[a-z]{2,}");
+    </script>
+
+
+
+
+
+</body>
+</html>
