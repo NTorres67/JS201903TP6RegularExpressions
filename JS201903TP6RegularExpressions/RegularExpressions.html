@@ -26,6 +26,19 @@
         var regPat = new RegExp("\d{1,5}\s[A-Z]{2}\b[a-z]{2,}");
     </script>
 
+    <!-- Methods to search through a string -->
+
+    <script>
+        // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
+
+        var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
+
+        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");    // prints the index for the first match
+
+
+
+    </script>
+
 
 
 
