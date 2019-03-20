@@ -26,14 +26,62 @@
         var regPat = new RegExp("\d{1,5}\s[A-Z]{2}\b[a-z]{2,}");
     </script>
 
-    <!-- Methods to search through a string -->
+    <!-- Methods to search through a string - not used often -->
 
     <script>
         // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
 
         var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
 
-        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");    // prints the index for the first match
+        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");    // prints the index for the first match     
+
+    </script>
+
+    <p>***************************</p>
+
+    <!-- Different Ways to Represent Different Types of Characters -->
+
+    <script>
+        // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
+
+        var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
+
+        // *** . <==> Represents any 1 character not newline     newline <==> \n
+        // *** \. <==> Respents a period
+        // *** [^0-9] <==> not a number; [0-9] <==> any length of numbers
+        // *** \w A-Z, a-z, 0-9 or _ <==> matches for one of these things listed
+        // *** \W A-Z, a-z, 0-9 or _ <==> matches for NOT one of these things listed
+            // A-Z <==> upper case letter; a-z <==> lower case letters; 0-9 <==> numbers 
+
+        // *** \s <==> matches for anything that is a space
+        // *** \S <==> matches for anything that is NOT a space
+        // *** \d <==> matches for anything that is a number
+        // *** \D <==> matches for anything that is NOT a number
+        // *** \b <==> matches for anything that is a word boundry
+        // *** \B <==> matches for anything that is NOT a word boundry
+
+        // *** ? <==> represents 0 to one number
+            // [0,9]? <==> search from 0 to one numbers but no more than that            
+        // *** + <==> represents one or more numbers
+            // [0,9]+ <==> search for at least 1 number
+        // *** * <==> represents 0 or more numbers
+            // [0,9]* <==> a number can be there but it does not have to be
+        // *** [Aa] <==> match for exactly 1 A (upper case A) or 1 a (lower case a)
+
+        // *** ^ <==> represents the beginning of a string
+        // *** $ <==> represents the end of a string
+
+        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");
+
+        // Search for an email address
+
+        document.write(longStr.search(/[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/) + "<br / > ");
+
+        // What does an email contain
+            // /[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
+                // {2,4} <==> characters in length
+
+
 
 
 
