@@ -80,13 +80,24 @@
         // What does an email contain
             // /[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
                 // {2,4} <==> characters in length
+    </script>
 
+    <!-- *** Replace Function:  -->
 
+    <script>
+        // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
+
+        var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
+
+        // Replace all digits 5 in length with a bunch of 5's, string itself was not changed
+
+        document.write(longStr.replace(/\d{5}/, "55555") + "<br />");
+
+        document.write(longStr + "<br />");
 
 
 
     </script>
-    <p> test </p>
 
 
 
