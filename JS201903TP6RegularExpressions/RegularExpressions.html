@@ -82,7 +82,7 @@
                 // {2,4} <==> characters in length
     </script>
 
-    <!-- *** Replace Function:  -->
+    <!-- *** Replace Function:  replace digits-->
 
     <script>
         // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
@@ -94,7 +94,19 @@
         document.write(longStr.replace(/\d{5}/, "55555") + "<br />");
 
         document.write(longStr + "<br />");
+    </script>
 
+    <!-- *** Match Function: find every match-->
+
+    <script>
+        // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
+
+        var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
+
+        // *** /g <==> reprents that you want to find every single match throughout the whole entire string
+
+        matchArray = longStr.match(/\d{4,5}/g);
+        document.write(matchArray + "<br />");
 
 
     </script>
