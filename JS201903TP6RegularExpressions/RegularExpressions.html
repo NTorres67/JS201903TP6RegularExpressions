@@ -9,13 +9,12 @@
 </head>
 <body>
     <!-- Regular Expression:  Series of codes used to describe a series of characters your are searching for.
-        The way your define a series of characters using regular expression is almost exactly universal 
+        The way your define a series of characters using regular expression is almost exactly universal
         no matter what language you are using. The different is the methods used depending on the language used
         to perform your searches.  -->
-
     <!-- " / " == deliminiter - begins and ends
         [string]; {string length(s)}
-        \s == space; \b == boundry  
+        \s == space; \b == boundry
         ex: "Emma " space but not a boundry where as "Emma v" the space is a word boundry
         -->
 
@@ -33,7 +32,7 @@
 
         var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
 
-        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");    // prints the index for the first match     
+        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br / > ");    // prints the index for the first match
 
     </script>
 
@@ -51,7 +50,7 @@
         // *** [^0-9] <==> not a number; [0-9] <==> any length of numbers
         // *** \w A-Z, a-z, 0-9 or _ <==> matches for one of these things listed
         // *** \W A-Z, a-z, 0-9 or _ <==> matches for NOT one of these things listed
-            // A-Z <==> upper case letter; a-z <==> lower case letters; 0-9 <==> numbers 
+        // A-Z <==> upper case letter; a-z <==> lower case letters; 0-9 <==> numbers
 
         // *** \s <==> matches for anything that is a space
         // *** \S <==> matches for anything that is NOT a space
@@ -61,11 +60,11 @@
         // *** \B <==> matches for anything that is NOT a word boundry
 
         // *** ? <==> represents 0 to one number
-            // [0,9]? <==> search from 0 to one numbers but no more than that            
+        // [0,9]? <==> search from 0 to one numbers but no more than that
         // *** + <==> represents one or more numbers
-            // [0,9]+ <==> search for at least 1 number
+        // [0,9]+ <==> search for at least 1 number
         // *** * <==> represents 0 or more numbers
-            // [0,9]* <==> a number can be there but it does not have to be
+        // [0,9]* <==> a number can be there but it does not have to be
         // *** [Aa] <==> match for exactly 1 A (upper case A) or 1 a (lower case a)
 
         // *** ^ <==> represents the beginning of a string
@@ -78,9 +77,11 @@
         document.write(longStr.search(/[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/) + "<br / > ");
 
         // What does an email contain
-            // /[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
-                // {2,4} <==> characters in length
+        // /[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
+        // {2,4} <==> characters in length
     </script>
+
+    <p>***************************</p>
 
     <!-- *** Replace Function:  replace digits-->
 
@@ -96,6 +97,8 @@
         document.write(longStr + "<br />");
     </script>
 
+    <p>***************************</p>
+
     <!-- *** Match Function: find every match-->
 
     <script>
@@ -108,7 +111,25 @@
         matchArray = longStr.match(/\d{4,5}/g);
         document.write(matchArray + "<br />");
 
+        // *** /i <==> removed case sensitivity
+        // *** /m <==> makes the $ representitive of the end of the line or string whether there is a newline (\n) or not
+    </script>
 
+    <p>***************************</p>
+
+    <!-- Regular Expressions considered to be objects -->
+
+    <script>
+        // Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com
+
+        var longStr = "Emma 111 Canterbury Rd Elyria 44035 (216)-333-3333 emmalani@gmail.com";
+
+        var regexPat = /\d{3,5}/;
+        document.write((regexPat instanceof RegExp) + "<br />");
+
+        var regMatch = regexPat.exec(longStr);      // exec <==> shoots out the index for the very first match
+        document.write(regMatch + "<br />");        // regMatch <==> prints the actual match
+        document.write(regMatch.index + "<br />");  // index <==> prints index for the match
     </script>
 
 
